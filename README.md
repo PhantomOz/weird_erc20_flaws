@@ -175,27 +175,27 @@ These issues break interoperability with other smart contracts and ecosystem too
   - **Description:** The core functions of the ERC20 standard (`transfer`, `approve`, `transferFrom`) fail to include the required `returns (bool success)` in their signature.
   - **Impact:** Any compliant smart contract that calls these functions will have its transaction reverted, making the token unusable in the DeFi ecosystem.
   - **Files:**
-      - B1: [`src/B1/`](https://www.google.com/search?q=./src/B1/), [`test/B1.t.sol`](https://www.google.com/search?q=./test/B1.t.sol)
-      - B2: [`src/B2/`](https://www.google.com/search?q=./src/B2/), [`test/B2.t.sol`](https://www.google.com/search?q=./test/B2.t.sol)
-      - B3: [`src/B3/`](https://www.google.com/search?q=./src/B3/), [`test/B3.t.sol`](https://www.google.com/search?q=./test/B3.t.sol)
+      - B1: [`src/B1/`](./src/B1/), [`test/B1.t.sol`](./test/B1.t.sol)
+      - B2: [`src/B2/`](./src/B2/), [`test/B2.t.sol`](./test/B2.t.sol)
+      - B3: [`src/B3/`](./src/B3/), [`test/B3.t.sol`](./test/B3.t.sol)
 
 #### B4, B5, B6: `no-decimals`, `no-name`, `no-symbol`
 
   - **Description:** The optional but universally expected ERC20 metadata variables (`decimals`, `name`, `symbol`) are implemented with non-standard, case-sensitive names (e.g., `DECIMALS` instead of `decimals`).
   - **Impact:** Wallets and explorers cannot display the token's information correctly. On-chain protocols that try to read this metadata will have their calls reverted.
   - **Files:**
-      - B4: [`src/B4/`](https://www.google.com/search?q=./src/B4/), [`test/B4.t.sol`](https://www.google.com/search?q=./test/B4.t.sol)
-      - B5: [`src/B5/`](https://www.google.com/search?q=./src/B5/), [`test/B5.t.sol`](https://www.google.com/search?q=./test/B5.t.sol)
-      - B6: [`src/B6/`](https://www.google.com/search?q=./src/B6/), [`test/B6.t.sol`](https://www.google.com/search?q=./test/B6.t.sol)
+      - B4: [`src/B4/`](./src/B4/), [`test/B4.t.sol`](./test/B4.t.sol)
+      - B5: [`src/B5/`](./src/B5/), [`test/B5.t.sol`](./test/B5.t.sol)
+      - B6: [`src/B6/`](./src/B6/), [`test/B6.t.sol`](./test/B6.t.sol)
 
 #### B7: `no-Approval`
 
   - **Description:** The `approve` function correctly sets the allowance but fails to emit the required `Approval` event.
   - **Impact:** Off-chain services (wallets, indexers, explorers) will not detect that an approval has been set, leading to a broken and confusing user experience.
   - **Files:**
-      - Vulnerable: [`src/B7/NoApprovalEventToken.sol`](https://www.google.com/search?q=./src/B7/NoApprovalEventToken.sol)
-      - Fixed: [`src/B7/NoApprovalEventTokenFixed.sol`](https://www.google.com/search?q=./src/B7/NoApprovalEventTokenFixed.sol)
-      - Test: [`test/B7.t.sol`](https://www.google.com/search?q=./test/B7.t.sol)
+      - Vulnerable: [`src/B7/NoApprovalEventToken.sol`](./src/B7/NoApprovalEventToken.sol)
+      - Fixed: [`src/B7/NoApprovalEventTokenFixed.sol`](./src/B7/NoApprovalEventTokenFixed.sol)
+      - Test: [`test/B7.t.sol`](./test/B7.t.sol)
 
 -----
 
@@ -206,6 +206,6 @@ These issues break interoperability with other smart contracts and ecosystem too
   - **Description:** A privileged "central account" has a "God-mode" function that allows it to transfer tokens from any user's account without their consent.
   - **Impact:** A complete violation of self-custody. A malicious or compromised central account owner can steal funds from any user at will, rendering the token's decentralization a facade.
   - **Files:**
-      - Vulnerable: [`src/C1/CentralizedToken.sol`](https://www.google.com/search?q=./src/C1/CentralizedToken.sol)
-      - Fixed: [`src/C1/CentralizedTokenFixed.sol`](https://www.google.com/search?q=./src/C1/CentralizedTokenFixed.sol)
-      - Test: [`test/C1.t.sol`](https://www.google.com/search?q=./test/C1.t.sol)
+      - Vulnerable: [`src/C1/CentralizedToken.sol`](./src/C1/CentralizedToken.sol)
+      - Fixed: [`src/C1/CentralizedTokenFixed.sol`](./src/C1/CentralizedTokenFixed.sol)
+      - Test: [`test/C1.t.sol`](./test/C1.t.sol)

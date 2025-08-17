@@ -26,7 +26,7 @@ contract RestrictiveApprovalTest is Test {
         vm.expectRevert("Approval amount exceeds balance");
         flawedContract.approve(dex, type(uint256).max);
 
-        // This token is now incompatible with many DeFi protocols.
+        // This token is now incompatible with many DeSFi protocols.
     }
 
     function test_Flaw_CheckProvidesFalseSecurity() public {
